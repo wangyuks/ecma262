@@ -11508,7 +11508,7 @@
         DecimalDigits[Sep] ::
           DecimalDigit
           DecimalDigits[?Sep] DecimalDigit
-          [+Sep] DecimalDigits[?Sep] NumericLiteralSeparator DecimalDigit
+          [+Sep] DecimalDigits[+Sep] NumericLiteralSeparator DecimalDigit
 
         DecimalDigit :: one of
           `0` `1` `2` `3` `4` `5` `6` `7` `8` `9`
@@ -11534,7 +11534,7 @@
         BinaryDigits[Sep] ::
           BinaryDigit
           BinaryDigits[?Sep] BinaryDigit
-          [+Sep] BinaryDigits[?Sep] NumericLiteralSeparator BinaryDigit
+          [+Sep] BinaryDigits[+Sep] NumericLiteralSeparator BinaryDigit
 
         BinaryDigit :: one of
           `0` `1`
@@ -11546,7 +11546,7 @@
         OctalDigits[Sep] ::
           OctalDigit
           OctalDigits[?Sep] OctalDigit
-          [+Sep] OctalDigits[?Sep] NumericLiteralSeparator OctalDigit
+          [+Sep] OctalDigits[+Sep] NumericLiteralSeparator OctalDigit
 
         OctalDigit :: one of
           `0` `1` `2` `3` `4` `5` `6` `7`
@@ -11558,7 +11558,7 @@
         HexDigits[Sep] ::
           HexDigit
           HexDigits[?Sep] HexDigit
-          [+Sep] HexDigits[?Sep] NumericLiteralSeparator HexDigit
+          [+Sep] HexDigits[+Sep] NumericLiteralSeparator HexDigit
 
         HexDigit :: one of
           `0` `1` `2` `3` `4` `5` `6` `7` `8` `9` `a` `b` `c` `d` `e` `f` `A` `B` `C` `D` `E` `F`
