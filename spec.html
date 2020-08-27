@@ -30469,8 +30469,7 @@ THH:mm:ss.sss
           1. Let _O_ be ? RequireObjectCoercible(*this* value).
           1. Let _S_ be ? ToString(_O_).
           1. Let _R_ be _S_.
-          1. Repeat, while _args_ is not empty,
-            1. Remove the first element from _args_ and let _next_ be the value of that element.
+          1. For each element _next_ of _args_, do
             1. Let _nextString_ be ? ToString(_next_).
             1. Set _R_ to the string-concatenation of _R_ and _nextString_.
           1. Return _R_.
@@ -33740,8 +33739,7 @@ THH:mm:ss.sss
           1. Let _A_ be ? ArraySpeciesCreate(_O_, 0).
           1. Let _n_ be 0.
           1. Prepend _O_ to _items_.
-          1. Repeat, while _items_ is not empty,
-            1. Remove the first element from _items_ and let _E_ be the value of the element.
+          1. For each element _E_ of _items_, do
             1. Let _spreadable_ be ? IsConcatSpreadable(_E_).
             1. If _spreadable_ is *true*, then
               1. Let _k_ be 0.
@@ -34283,8 +34281,7 @@ THH:mm:ss.sss
           1. Let _len_ be ? LengthOfArrayLike(_O_).
           1. Let _argCount_ be the number of elements in _items_.
           1. If _len_ + _argCount_ &gt; 2<sup>53</sup> - 1, throw a *TypeError* exception.
-          1. Repeat, while _items_ is not empty,
-            1. Remove the first element from _items_ and let _E_ be the value of the element.
+          1. For each element _E_ of _items_, do
             1. Perform ? Set(_O_, ! ToString(_len_), _E_, *true*).
             1. Set _len_ to _len_ + 1.
           1. Perform ? Set(_O_, *"length"*, _len_, *true*).
@@ -34715,8 +34712,7 @@ THH:mm:ss.sss
                 1. Perform ? DeletePropertyOrThrow(_O_, _to_).
               1. Set _k_ to _k_ - 1.
           1. Set _k_ to _actualStart_.
-          1. Repeat, while _items_ is not empty,
-            1. Remove the first element from _items_ and let _E_ be the value of that element.
+          1. For each element _E_ of _items_, do
             1. Perform ? Set(_O_, ! ToString(_k_), _E_, *true*).
             1. Set _k_ to _k_ + 1.
           1. [id="step-array-proto-splice-set-length"] Perform ? Set(_O_, *"length"*, _len_ - _actualDeleteCount_ + _itemCount_, *true*).
@@ -34801,8 +34797,7 @@ THH:mm:ss.sss
                 1. Perform ? DeletePropertyOrThrow(_O_, _to_).
               1. Set _k_ to _k_ - 1.
             1. Let _j_ be 0.
-            1. Repeat, while _items_ is not empty,
-              1. Remove the first element from _items_ and let _E_ be the value of that element.
+            1. For each element _E_ of _items_, do
               1. Perform ? Set(_O_, ! ToString(_j_), _E_, *true*).
               1. Set _j_ to _j_ + 1.
           1. Perform ? Set(_O_, *"length"*, _len_ + _argCount_, *true*).
