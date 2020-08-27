@@ -30314,13 +30314,10 @@ THH:mm:ss.sss
         <emu-alg>
           1. Let _length_ be the number of elements in _codeUnits_.
           1. Let _elements_ be a new empty List.
-          1. Let _nextIndex_ be 0.
-          1. Repeat, while _nextIndex_ &lt; _length_,
-            1. Let _next_ be _codeUnits_[_nextIndex_].
+          1. For each element _next_ of _codeUnits_, do
             1. Let _nextCU_ be ? ToUint16(_next_).
             1. Append _nextCU_ to the end of _elements_.
-            1. Set _nextIndex_ to _nextIndex_ + 1.
-          1. Return the String value whose code units are, in order, the elements in the List _elements_. If _length_ is 0, the empty String is returned.
+          1. Return the String value whose code units are, in order, the elements in the List _elements_. If _codeUnits_ is empty, the empty String is returned.
         </emu-alg>
         <p>The *"length"* property of the `fromCharCode` function is 1.</p>
       </emu-clause>
@@ -30329,17 +30326,13 @@ THH:mm:ss.sss
         <h1>String.fromCodePoint ( ..._codePoints_ )</h1>
         <p>The `String.fromCodePoint` function may be called with any number of arguments which form the rest parameter _codePoints_. The following steps are taken:</p>
         <emu-alg>
-          1. Let _length_ be the number of elements in _codePoints_.
           1. Let _elements_ be a new empty List.
-          1. Let _nextIndex_ be 0.
-          1. Repeat, while _nextIndex_ &lt; _length_,
-            1. Let _next_ be _codePoints_[_nextIndex_].
+          1. For each element _next_ of _codePoints_, do
             1. Let _nextCP_ be ? ToNumber(_next_).
             1. If ! IsInteger(_nextCP_) is *false*, throw a *RangeError* exception.
             1. If _nextCP_ &lt; 0 or _nextCP_ &gt; 0x10FFFF, throw a *RangeError* exception.
             1. Append the elements of ! CodePointToUTF16CodeUnits(_nextCP_) to the end of _elements_.
-            1. Set _nextIndex_ to _nextIndex_ + 1.
-          1. Return the String value whose code units are, in order, the elements in the List _elements_. If _length_ is 0, the empty String is returned.
+          1. Return the String value whose code units are, in order, the elements in the List _elements_. If _codePoints_ is empty, the empty String is returned.
         </emu-alg>
         <p>The *"length"* property of the `fromCodePoint` function is 1.</p>
       </emu-clause>
